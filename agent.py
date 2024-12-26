@@ -6,7 +6,7 @@ from langgraph.graph import add_messages, StateGraph, START
 class GraphState(TypedDict):
     messages: Annotated[Sequence[BaseMessage], add_messages]
 
-def node1(state: GraphState) -> str:
+def node1(state: GraphState) -> GraphState:
     return {"messages": BaseMessage(content="Hello", name="node1")}
 
 graph_builder = StateGraph(GraphState)
